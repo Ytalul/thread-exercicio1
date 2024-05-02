@@ -12,13 +12,11 @@ public class ThreadNum extends Thread{
         byte i = 0;
         System.out.print(" Os numeros dessa lista são: ");
         for( Object e : lista ){
-            if ( e  instanceof String){
-            }
-            else {
+            Class<?> tipo = e.getClass();
+            if (tipo.getName().equals("java.lang.Integer")){
                 novaLista[i] = (int) e;
                 i ++;
                 System.out.print(e);
-
             }
         }
     }
